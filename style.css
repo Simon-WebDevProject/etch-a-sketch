@@ -15,8 +15,7 @@ body{
     justify-content: center;
 }
 .grid{
-    display: flex;
-    flex-wrap: wrap;
+    display: grid;
     height: 500px;
     width: 500px;
     background-color: white;
@@ -26,7 +25,4 @@ body{
     box-sizing: border-box;
     flex: auto;
     border: 1px solid rgb(169, 169, 169);
-}
-.hover{
-    background-color: aqua;
 }
