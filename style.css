@@ -1,9 +1,14 @@
+@font-face {
+    font-family: 'Bungee';
+    src: url(fonts/Bungee/Bungee-Regular.ttf) format('truetype');
+}
+
 html, body{
     margin: 0;
     padding: 0;
 }
 body{
-    background-color: rgb(210, 210, 210);
+    background-color: #d7d7d7;
     height: 100vh;
     width: 100vw;
     display: flex;
@@ -18,41 +23,64 @@ body{
 .content{
     display: flex;
     justify-content: center;
+    align-items: center;
 }
 .sidebarBtn{
-    padding: 4px;
-    height: 26px;
+    padding: 20px 8px 10px 10px;
+    height: 34px;
     font-weight: bold;
-    border-top-left-radius: 5px;
-    border-bottom-left-radius: 10px;   
-    color: rgb(77, 77, 77);
+    border-top-left-radius: 10px;
+    border-bottom-left-radius: 10px;
+    box-shadow: 2px 0px 10px rgb(154, 154, 154);   
+    color: rgb(125, 125, 125);
     background-color: rgb(169, 169, 169);
     user-select: none;
+    transition: all 0.6s;
+}
+.sidebarBtn:hover{
+    transform: scale(1.04);
 }
 .sidebar{
     height: 100%;
     display: flex;
     flex-direction: column;
     padding: 0px 20px 0px 20px;
-    background-color: rgb(169, 169, 169);
+    background-color: rgb(255, 255, 255);
+    border: 2px solid rgb(169, 169, 169);
+    box-shadow: 4px 6px 10px rgb(154, 154, 154);
+    border-right: none;
+    box-sizing: border-box;
     border-bottom-left-radius: 10px;    
+    border-top-left-radius: 10px;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;    
 }
 .active{
     display: none;
 }
 .sideBtn{
-    margin-top: 20px;
+    font-family: "Bungee";
+    font-size: 12px;
+    padding: 5px 10px 5px 10px;
+    margin-bottom: 5px;
     background-color: transparent;
-    border: 2px solid white;
-    color: white;
-    border-radius: 6px;
+    border: 2px solid rgb(125, 125, 125);
+    color: rgb(91, 91, 91);
+    border-radius: 4px;
+    transition: all 1;
+    display: flex;
+}
+.sideBtn:hover{
+    transform: scale(1.02);
 }
 .grid{
     display: grid;
-    height: 500px;
-    width: 500px;
+    height: 600px;
+    width: 600px;
     background-color: white;
     border: 1px solid rgb(169, 169, 169);
+    box-shadow: 4px 6px 10px rgb(154, 154, 154);
 }
 .gridOn{
     border: 1px solid rgb(169, 169, 169);
@@ -60,4 +88,23 @@ body{
 .grid-item{
     box-sizing: border-box;
     flex: auto;
+}
+.title{
+    font-family: "Bungee", system-ui;
+    font-size: 12px;
+    text-align: center;
+    padding: 5px 10px 5px 10px;
+    margin-top: 15px;
+    margin-bottom: 10px;
+    color: rgb(154, 46, 46);
+}
+.colorSel{
+    height: 80px;
+    width: 80px;
+    background-color: transparent;
+    border: none;
+    transition: all 0.5s;
+}
+.colorSel:hover{
+    transform: scale(1.05);
 }

@@ -10,14 +10,22 @@
 </head>
 <body>
     <div class="header">
-        <h1>Etch-a-Sketch</h1>
+        <h1></h1>
     </div>
     <div class="content">
         <div class="sidebarBtn">
-            <span>&lt;&lt;</span>
+            <span>&gt;</span>
         </div>
         <div class="sidebar">
-            <button class="gridSwitch sideBtn">Grid Toggle</button>
+            <span class="color title">Color</span>
+            <input type="color" class="colorSel">
+
+            <span class="color title">Tools</span>
+            <button class="eraser sideBtn">Eraser</button>
+            <button class="gridClear sideBtn">Clear All</button>
+            
+            <span class="settings title">SETTINGS</span>
+            <button class="gridSwitch sideBtn">Toggle Grid</button>
             <button class="gridRegen sideBtn">Change Size</button>
         </div>
     </div>
