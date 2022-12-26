@@ -10,7 +10,9 @@ const  content = document.querySelector('.content'),
     gridRegen = document.querySelector('.gridRegen'),
     clearBtn = document.querySelector('.gridClear'),
     colorSel = document.querySelector('.colorSel'),
-    eraser = document.querySelector('.eraser');
+    eraser = document.querySelector('.eraser'),
+    slider = document.querySelector('.gridSlider'),
+    sliderTitle = document.querySelector('.dimensions');
 
 
 const grid = document.createElement('div');
@@ -30,6 +32,7 @@ function gridGen(){
         grid.appendChild(gridItem);
     }
     itemListener();
+    gridBtn.classList.add('btnActive');
 }
 gridGen();
 
@@ -56,26 +59,14 @@ sideBtn.addEventListener('click', function() {
 gridBtn.addEventListener('click', function() {
     gridItem.forEach((gridItem) => gridItem.classList.toggle('gridOn'));
 
-    const gridCheck = document.querySelector('.grid-item-1')
+    const gridCheck = document.querySelector('.grid-item-1');
     if (gridCheck.classList.contains('gridOn')){
         grid.style.border = '1px solid rgb(169, 169, 169)';
     }
     else{
         grid.style.border = '2px solid rgb(169, 169, 169)';
     }
-});
-
-//change Grid Size 
-gridRegen.addEventListener('click', function() {
-    gridSize = prompt('Enter new side length:');
-
-    if (gridSize > 99){
-        alert('error; too big, <100 only');
-    }
-    else{
-        gridItem.forEach((gridItem) => gridItem.remove());
-        gridGen();
-    }
+    gridBtn.classList.toggle('btnActive');
 });
 
 //clear all
@@ -88,12 +79,35 @@ clearBtn.addEventListener('click', function() {
 colorSel.addEventListener('click', function() {
     colorSel.addEventListener('input', function() {
         color = colorSel.value;
+        eraser.classList.remove('btnActive');
     });
     itemListener();
 });
 
 //eraser mode
 eraser.addEventListener('click', function() {
-    color = 'rgb(255, 255, 255)';
-    itemListener();
+    if(color != 'rgb(255, 255, 255)'){ 
+        color = 'rgb(255, 255, 255)';
+        itemListener();
+        eraser.classList.toggle('btnActive');
+    }
+    else{
+        eraser.classList.toggle('btnActive');
+        color = colorSel.value;
+        itemListener();
+    }
 });
+
+//grid size slider
+slider.oninput = function(){
+    sliderTitle.innerHTML = `${this.value} x ${this.value}`;
+    gridSize = this.value;
+    let temp = gridSize;
+
+    setTimeout(() => {
+        if(temp == gridSize){
+            gridItem.forEach((gridItem) => gridItem.remove());
+            gridGen();
+        }
+    }, 500);    
+}

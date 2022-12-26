@@ -86,6 +86,10 @@ body{
 .gridOn{
     border: 1px solid rgb(169, 169, 169);
 }
+.btnActive{
+    border: 2px solid royalblue;
+    color: royalblue;
+}
 .grid-item{
     box-sizing: border-box;
     flex: auto;
@@ -97,7 +101,9 @@ body{
     padding: 5px 10px 5px 10px;
     margin-top: 15px;
     margin-bottom: 10px;
-    color: rgb(154, 46, 46);
+    color: rgb(63, 63, 63);
+    user-select: none;
+    font-style: italic;
 }
 .colorSel{
     height: 80px;
@@ -108,4 +114,19 @@ body{
 }
 .colorSel:hover{
     transform: scale(1.05);
+}
+.range{
+    width: 110px;
+    transition: all 0.2s;
+    margin-bottom: 10px;
+}
+.range:hover{
+    transform: scale(1.05);
+}
+.sub{
+    margin-bottom: 3px;
+    color: rgb(63, 63, 63);
+}
+.dimensions{
+    color: rgb(46, 89, 219);
 }
