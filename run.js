@@ -1,30 +1,31 @@
 //etch-a-sketch
 //Odin Project
 
-let gridSize = 12, gridItem, color = '#000000';
-const  content = document.querySelector('.content'),
-    sidebar = document.querySelector('.sidebar'),
-    sideBtn = document.querySelector('.sidebarBtn'),
-    sideBtnText = sideBtn.querySelector('span'),
-    gridBtn = document.querySelector('.gridSwitch'),
-    gridRegen = document.querySelector('.gridRegen'),
-    clearBtn = document.querySelector('.gridClear'),
-    colorSel = document.querySelector('.colorSel'),
-    eraser = document.querySelector('.eraser'),
-    slider = document.querySelector('.gridSlider'),
-    sliderTitle = document.querySelector('.dimensions');
+let gridSize = 12, gridItem, color = '#000000', mousedown = false;
+const   content = document.querySelector('.content'),
+        sidebar = document.querySelector('.sidebar'),
+        sideBtn = document.querySelector('.sidebarBtn'),
+        sideBtnText = sideBtn.querySelector('span'),
+        gridBtn = document.querySelector('.gridSwitch'),
+        gridRegen = document.querySelector('.gridRegen'),
+        clearBtn = document.querySelector('.gridClear'),
+        colorSel = document.querySelector('.colorSel'),
+        eraser = document.querySelector('.eraser'),
+        slider = document.querySelector('.gridSlider'),
+        sliderTitle = document.querySelector('.dimensions');
 
-
+//creat default grid
 const grid = document.createElement('div');
 grid.classList.add('grid');
 content.appendChild(grid);
 
-//gen grid
+//gen grid layout
 function gridGen(){
     grid.style.gridTemplateColumns = `repeat(${gridSize}, auto)`;
 
     for(i = 1; i <= (gridSize*gridSize); i++){
         gridItem = document.createElement('div');
+
         gridItem.classList.add('grid-item');
         gridItem.classList.add(`grid-item-${i}`);
         gridItem.classList.add('gridOn');
@@ -43,6 +44,18 @@ function itemListener(){
         gridItem.style.backgroundColor = `${color}`;
     }));
 }
+
+grid.addEventListener('click', function() {
+    mousedown = !mousedown;
+
+    if(mousedown == true) {
+    
+    }
+    else{
+   
+    }
+    itemListener();
+});
 
 //toggle sidebar
 sideBtn.addEventListener('click', function() {
