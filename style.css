@@ -60,7 +60,8 @@ body{
     display: none;
 }
 .sideBtn{
-    font-family: "Bungee";
+    font-family: 'Bungee', system-ui, sans-serif;
+    font-weight: bold;
     font-size: 12px;
     padding: 5px 10px 5px 10px;
     margin-bottom: 5px;
@@ -96,7 +97,8 @@ body{
     flex: auto;
 }
 .title{
-    font-family: "Bungee", system-ui;
+    font-family: 'Bungee', system-ui, sans-serif;
+    font-weight: bold;
     font-size: 12px;
     text-align: center;
     padding: 5px 10px 5px 10px;
